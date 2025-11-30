@@ -1,0 +1,5 @@
+## Modelo phi-3-mini-4k-instruct
+* **Tiempo de Ejecución:** 30.311 segundos
+* **Respuesta Generada:** " - La empresa XYZ reportó un incremento del 15% en ventas trimestrales, principalmente debido al lanzamiento exitoso de su nueva línea de productos ecológicos.
+- Se implementaron mejoras significativas en la cadena de suministro para optimizar la logística y reducir costos operativos, contribuyendo a un crecimiento sostenible del negocio.
+- A pesar del crecimiento, el reporte alerta sobre la necesidad de diversificar su cartera de productos, evitando depender demasiado en una sola línea para mantener su competencia y prevenir riesgos de volatilidad en los mercados actuales."
