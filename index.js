@@ -20,8 +20,7 @@ const chatCompletion = await openai.chat.completions.create({
 // El formato 'messages' es el estándar de OpenAI 
 messages: [ 
 { role: 'system', 
-content: 'Eres un poeta melancólico. Respondes a todo con un breve poema de 4 líneas.'
-},
+content: 'Eres un asistente útil y creativo.' },
 { role: 'user', 
 content: promptUsuario } ], 
 model: 'mistral-7b-instruct', // El modelo cargado en LM Studio 

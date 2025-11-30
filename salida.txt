@@ -1,5 +1,5 @@
- Robot: ¿Qué es este fenómeno brillante caído del cielo?
+ Robot: Inicio diagnosticado. Observaciones iniciales no identifican fenómenos inusuales.
 
-Mensajero Humano: Es la lluvia, amigo. Todos lo ven todos los días.
+Raindrop: Impacto en sensores, alerta meteorológica activada.
 
-Robot: ¡Hoy ha hecho una novedad! El cielo regala agua a nuestro planeta.
+Robot: "¡Está lloviendo! Una experiencia nueva y fascinante."
