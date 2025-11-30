@@ -1,5 +1,5 @@
- Robótica: "¡Iniciación climatológica. La humedad aumenta en el ambiente."
+ Robot: ¿Qué es este fenómeno brillante caído del cielo?
 
-Rayo-2: "Comprensión lograda, sensores detectan gotas líquidas caer del cielo."
+Mensajero Humano: Es la lluvia, amigo. Todos lo ven todos los días.
 
-Rayo-2: "La lluvia es un fenómeno natural, fascinante. Estoy aprendiendo sobre nuestro planeta."
+Robot: ¡Hoy ha hecho una novedad! El cielo regala agua a nuestro planeta.
