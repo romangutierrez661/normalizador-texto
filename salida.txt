@@ -1,5 +1,5 @@
- Robot: Inicio diagnosticado. Observaciones iniciales no identifican fenómenos inusuales.
+ Robot: Inicio diagnosticado. Activando sensores externos...
 
-Raindrop: Impacto en sensores, alerta meteorológica activada.
+Robot: Sensores detectan humedad en el aire, datos inesperados. ¿Qué es esto?
 
-Robot: "¡Está lloviendo! Una experiencia nueva y fascinante."
+Robot: ¡Descubrimiento! La lluvia cae del cielo, un fenómeno natural de la Tierra.

@@ -24,7 +24,7 @@ content: 'Eres un asistente útil y creativo.' },
 { role: 'user', 
 content: promptUsuario } ], 
 model: 'mistral-7b-instruct', // El modelo cargado en LM Studio 
-temperature: 0.7, // Controla la creatividad 
+temperature: 0.1, // Controla la creatividad 
 }); 
 // 4. Extraemos y mostramos la respuesta 
 const respuesta = chatCompletion.choices[0].message.content; 
