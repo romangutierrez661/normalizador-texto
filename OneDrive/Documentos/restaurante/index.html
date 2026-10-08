@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eat Vikings - Restaurante</title>
+    
+    <!-- Optimización PageSpeed: Preconnect & Font Display -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Agrega esto en el <head> de index.html y nosotros.html -->
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
+    
+    <!-- Carga diferida de FontAwesome para no bloquear el renderizado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Menú Sticky con Botón de Hamburguesa para Celulares -->
+    <nav class="navbar-sticky">
+        <div class="nav-container">
+            <span class="nav-brand">EAT VIKINGS</span>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link active">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="#menu" class="nav-link">Menú</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Hero / Slider -->
+    <header id="inicio" class="hero-section">
+        <button class="carousel-arrow prev-btn" aria-label="Anterior" onclick="changeSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="hero-center">
+            <div class="logo-circle">
+                <img src="img/logo.png" alt="Eat Vikings Logo" width="170" height="170" loading="lazy">
+            </div>
+            <h1 class="brand-title">EAT VIKINGS</h1>
+            <p class="brand-subtitle">Banquete de Héroes & Sabores Nórdicos</p>
+        </div>
+
+        <button class="carousel-arrow next-btn" aria-label="Siguiente" onclick="changeSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </header>
+
+    <!-- Divisor Difuminado -->
+    <div class="blur-wave-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,50 L1200,120 L0,120 Z"></path>
+        </svg>
+    </div>
+
+    <!-- Sección Contenido -->
+    <section class="main-content">
+        <div class="content-container">
+            <h2 class="section-title">Un Banquete Digno del Valhalla</h2>
+            <p class="description-text">
+                En <strong>Eat Vikings</strong> traemos la autenticidad, abundancia y tradición de la cocina nórdica a tu mesa. Disfruta de cortes jugosos, hidromiel artesanal y recetas asadas al fuego.
+            </p>
+
+            <!-- 1. Redes Sociales en la parte superior (Instagram, TikTok, Facebook) -->
+            <div class="top-social-bar">
+                <a href="https://instagram.com" target="_blank" class="social-item">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="social-item">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="social-item">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook</span>
+                </a>
+            </div>
+
+            <!-- 2. Información de Contacto abajo en el centro (Texto visible, sin botón) -->
+            <div class="contact-fixed-box">
+                <h3 class="contact-box-title"><i class="fas fa-address-card"></i> Contacto</h3>
+                <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> +52 55 1234 5678</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Av. Valhalla #404, Ciudad Vikinga</p>
+                <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> contacto@eatvikings.com</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer id="contacto" class="footer">
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Eat Vikings. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript corregido y funcional -->
+    <script>
+        // 1. Función para desplegar/ocultar las tarjetas desplegables
+        function toggleDetails(id, buttonElement) {
+            const details = document.getElementById(id);
+            const isOpen = details.classList.contains('active');
+
+            // Cierra todos los detalles abiertos previamente
+            document.querySelectorAll('.card-details').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.card-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Si no estaba abierto, lo abre
+            if (!isOpen) {
+                details.classList.add('active');
+                buttonElement.classList.add('active');
+            }
+        }
+
+        // 2. Lógica para el Slider de fondo
+        // Reemplaza la lista slides en index.html por estas URLs optimizadas
+const slides = [
+    'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=70',
+    'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=70',
+    'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=70',
+    'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=70'
+];
+    
+        let currentSlide = 0;
+        const heroSection = document.querySelector('.hero-section');
+    
+        function updateHeroBackground() {
+            heroSection.style.backgroundImage = `
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.7) 60%, var(--bg-dark) 100%),
+                url('${slides[currentSlide]}')
+            `;
+        }
+    
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            updateHeroBackground();
+        }
+    
+        // Cambiar imagen automáticamente cada 6 segundos
+        setInterval(() => {
+            changeSlide(1);
+        }, 6000);
+
+        // Toggle para el Menú Hamburguesa en Celulares
+    // Código para abrir/cerrar el menú desplegable en celular
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const icon = menuToggle.querySelector('i');
+            if (navLinks.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+    </script>
+
+</body>
+</html>
