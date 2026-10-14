@@ -431,3 +431,191 @@ body {
         margin: 0 auto 20px;
     }
 }
+
+/* ===================================================
+   ORGANIGRAMA EN CASCADA (LÍNEAS AMARILLAS Y DATOS CON SCROLL)
+   =================================================== */
+
+.organigrama-section {
+    border-top: 1px solid rgba(230, 161, 59, 0.2);
+    padding-top: 40px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.tree-cascade-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+/* Niveles en cascada */
+.cascade-level {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Línea conectora vertical amarilla/dorada entre niveles */
+.cascade-line-v {
+    width: 2px;
+    height: 35px;
+    background-color: var(--primary-gold);
+    margin: 10px 0;
+    box-shadow: 0 0 8px rgba(230, 161, 59, 0.5);
+}
+
+/* Tarjeta compacta del integrante con datos preservados */
+.org-card {
+    background: var(--bg-card);
+    border: 2px solid rgba(230, 161, 59, 0.4);
+    border-radius: 12px;
+    padding: 12px;
+    width: 280px;
+    height: 135px; /* Mantiene la altura fija para habilitar el desplazamiento */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.org-card:hover {
+    border-color: var(--primary-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 161, 59, 0.25);
+}
+
+.leader-card {
+    border-color: var(--primary-gold);
+    background: rgba(230, 161, 59, 0.08);
+}
+
+/* PARTE SUPERIOR */
+.org-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.org-avatar-box {
+    width: 55px;
+    height: 55px;
+    border: 2px solid var(--primary-gold);
+    border-radius: 50%;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.org-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SCROLL HORIZONTAL A LA DERECHA PARA EL CORREO */
+.org-email-scroll-box {
+    flex-grow: 1;
+    background: #15171d;
+    border: 1px solid rgba(230, 161, 59, 0.3);
+    border-radius: 8px;
+    padding: 6px 8px;
+    position: relative;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.email-title {
+    font-size: 0.68rem;
+    color: var(--primary-gold);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+}
+
+.email-scroll-content {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 2px;
+}
+
+.email-scroll-content::-webkit-scrollbar {
+    height: 3px;
+}
+
+.email-scroll-content::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 4px;
+}
+
+.email-text {
+    font-size: 0.78rem;
+    color: var(--text-light);
+}
+
+.email-arrow {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    font-size: 0.7rem;
+    color: var(--primary-gold);
+}
+
+/* SCROLL VERTICAL HACIA ABAJO PARA PUESTO Y NOMBRE DEBAJO */
+.org-card-bottom-scroll {
+    border-top: 1px dashed rgba(230, 161, 59, 0.3);
+    padding-top: 4px;
+    height: 48px;
+    overflow-y: auto;
+}
+
+.org-card-bottom-scroll::-webkit-scrollbar {
+    width: 3px;
+}
+
+.org-card-bottom-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary-gold);
+    border-radius: 4px;
+}
+
+.bottom-scroll-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.org-name {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.org-puesto {
+    color: var(--primary-gold);
+    font-size: 0.82rem;
+    display: block;
+}
+
+/* RESPONSIVE PARA MÓVILES */
+@media (max-width: 768px) {
+    .cascade-level {
+        gap: 15px;
+    }
+
+    .org-card {
+        width: 100%;
+        max-width: 290px;
+    }
+}
