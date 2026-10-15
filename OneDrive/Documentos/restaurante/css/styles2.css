@@ -317,37 +317,52 @@ body {
 }
 
 /* 5. Footer */
+/* ===================================================
+   FOOTER CON ÍCONOS PERFECTAMENTE CENTRADOS
+   =================================================== */
+
 .footer {
     background: #0b0c0e;
     border-top: 1px solid #222;
     padding: 30px 20px 15px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .footer-container {
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centra horizontalmente todo el bloque */
+    align-items: center;     /* Centra verticalmente */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center; /* Asegura que los íconos se alineen al medio */
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;               /* Espacio uniforme entre cada ícono */
+    margin: 0 auto;
 }
 
 .social-links a {
     color: var(--text-light);
-    font-size: 1.5rem;
-    margin-left: 15px;
-    transition: color 0.3s;
+    font-size: 1.8rem;       /* Tamaño visible para los íconos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
     color: var(--primary-gold);
+    transform: translateY(-3px); /* Efecto elevación al pasar el mouse */
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid #1a1a1a;
     font-size: 0.85rem;
@@ -433,7 +448,7 @@ body {
 }
 
 /* ===================================================
-   ORGANIGRAMA EN CASCADA (LÍNEAS AMARILLAS Y DATOS CON SCROLL)
+   ORGANIGRAMA BASADO EN EL BOCETO DE PESTAÑAS Y DESPLEGABLES
    =================================================== */
 
 .organigrama-section {
@@ -452,170 +467,306 @@ body {
     padding: 20px 10px;
 }
 
-/* Niveles en cascada */
 .cascade-level {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 40px;
     width: 100%;
     flex-wrap: wrap;
 }
 
-/* Línea conectora vertical amarilla/dorada entre niveles */
+/* Línea conectora vertical en amarillo/dorado */
 .cascade-line-v {
     width: 2px;
-    height: 35px;
+    height: 40px;
     background-color: var(--primary-gold);
-    margin: 10px 0;
+    margin: 15px 0;
     box-shadow: 0 0 8px rgba(230, 161, 59, 0.5);
 }
 
-/* Tarjeta compacta del integrante con datos preservados */
-.org-card {
-    background: var(--bg-card);
-    border: 2px solid rgba(230, 161, 59, 0.4);
-    border-radius: 12px;
-    padding: 12px;
-    width: 280px;
-    height: 135px; /* Mantiene la altura fija para habilitar el desplazamiento */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.org-card:hover {
-    border-color: var(--primary-gold);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(230, 161, 59, 0.25);
-}
-
-.leader-card {
-    border-color: var(--primary-gold);
-    background: rgba(230, 161, 59, 0.08);
-}
-
-/* PARTE SUPERIOR */
-.org-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.org-avatar-box {
-    width: 55px;
-    height: 55px;
-    border: 2px solid var(--primary-gold);
-    border-radius: 50%;
-    overflow: hidden;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.org-avatar-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* SCROLL HORIZONTAL A LA DERECHA PARA EL CORREO */
-.org-email-scroll-box {
-    flex-grow: 1;
-    background: #15171d;
-    border: 1px solid rgba(230, 161, 59, 0.3);
-    border-radius: 8px;
-    padding: 6px 8px;
+/* CAJA PRINCIPAL DE CADA INTEGRANTE */
+.org-card-box {
     position: relative;
-    height: 55px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: 25px;
 }
 
-.email-title {
-    font-size: 0.68rem;
+.org-main-frame {
+    width: 190px;
+    height: 190px;
+    background: var(--bg-card);
+    border: 2px solid var(--primary-gold);
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.org-avatar-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-gold);
+}
+
+/* 1. BOTÓN @ (CORREO) EN LA ESQUINA SUPERIOR DERECHA */
+.org-btn-email {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+}
+
+.badge-tag {
+    background: var(--bg-card);
+    border: 2px solid var(--primary-gold);
+    border-radius: 8px;
+    color: var(--primary-gold);
+    font-weight: bold;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.badge-tag:hover {
+    background: var(--primary-gold);
+    color: #000;
+}
+
+/* POPUP DEL CORREO A LA DERECHA */
+.info-popup-email {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 8px;
+    background: #181a20;
+    border: 2px solid var(--primary-gold);
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+
+.popup-title {
+    display: block;
+    font-size: 0.7rem;
     color: var(--primary-gold);
     font-weight: bold;
     text-transform: uppercase;
-    display: block;
 }
 
-.email-scroll-content {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 2px;
-}
-
-.email-scroll-content::-webkit-scrollbar {
-    height: 3px;
-}
-
-.email-scroll-content::-webkit-scrollbar-thumb {
-    background: var(--primary-gold);
-    border-radius: 4px;
-}
-
-.email-text {
-    font-size: 0.78rem;
+.popup-text {
+    font-size: 0.82rem;
     color: var(--text-light);
 }
 
-.email-arrow {
+.org-btn-email:hover .info-popup-email,
+.org-btn-email:active .info-popup-email {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* 2. BOTÓN PUESTO (INFORMACIÓN) EN EL BORDE INFERIOR */
+.org-btn-puesto {
     position: absolute;
-    right: 5px;
-    top: 6px;
-    font-size: 0.7rem;
-    color: var(--primary-gold);
-}
-
-/* SCROLL VERTICAL HACIA ABAJO PARA PUESTO Y NOMBRE DEBAJO */
-.org-card-bottom-scroll {
-    border-top: 1px dashed rgba(230, 161, 59, 0.3);
-    padding-top: 4px;
-    height: 48px;
-    overflow-y: auto;
-}
-
-.org-card-bottom-scroll::-webkit-scrollbar {
-    width: 3px;
-}
-
-.org-card-bottom-scroll::-webkit-scrollbar-thumb {
-    background: var(--primary-gold);
-    border-radius: 4px;
-}
-
-.bottom-scroll-content {
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    z-index: 20;
 }
 
-.org-name {
-    color: var(--text-light);
+/* POPUP DEL PUESTO ABAJO */
+.info-popup-puesto {
+    position: absolute;
+    top: 100%;
+    margin-top: 8px;
+    background: #181a20;
+    border: 2px solid var(--primary-gold);
+    border-radius: 10px;
+    padding: 10px 14px;
+    width: 200px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.popup-name {
     font-size: 0.95rem;
+    color: var(--text-light);
     font-weight: bold;
 }
 
-.org-puesto {
+.popup-role {
+    font-size: 0.8rem;
     color: var(--primary-gold);
-    font-size: 0.82rem;
     display: block;
+    margin-top: 2px;
 }
 
-/* RESPONSIVE PARA MÓVILES */
+.org-btn-puesto:hover .info-popup-puesto,
+.org-btn-puesto:active .info-popup-puesto {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ADAPTACIÓN MÓVIL */
 @media (max-width: 768px) {
     .cascade-level {
-        gap: 15px;
+        gap: 25px;
     }
+    
+    .info-popup-email {
+        left: auto;
+        right: 0;
+        top: 100%;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
 
-    .org-card {
-        width: 100%;
-        max-width: 290px;
+
+
+
+
+/* ===================================================
+   MAQUETACIÓN FIEL DE 13 INTEGRANTES Y LÍNEAS
+   =================================================== */
+
+.board-tree-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+.circle-root {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--primary-gold);
+    border-radius: 50%;
+    background: var(--bg-dark);
+}
+
+.v-line-top {
+    width: 2px;
+    height: 20px;
+    background: var(--primary-gold);
+}
+
+.h-line-broad {
+    width: 70%;
+    height: 2px;
+    background: var(--primary-gold);
+}
+
+.tree-grid-level1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    align-items: start;
+}
+
+.tree-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.v-line-connector {
+    width: 2px;
+    height: 25px;
+    background: var(--primary-gold);
+}
+
+.sub-branch-left {
+    position: relative;
+    margin-left: -60px;
+    margin-top: 10px;
+}
+
+/* BLOQUE INFERIOR DE 5 INTEGRANTES */
+.board-lower-wrapper {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.v-divider-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(230, 161, 59, 0.25);
+    margin-bottom: 30px;
+}
+
+.lower-split-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+.lower-left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h-line-connector {
+    width: 60px;
+    height: 2px;
+    background: var(--primary-gold);
+}
+
+.bottom-circle-end {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--primary-gold);
+    border-radius: 50%;
+    margin-top: 20px;
+    background: var(--bg-dark);
+}
+
+@media (max-width: 800px) {
+    .tree-grid-level1 {
+        grid-template-columns: 1fr;
+    }
+    .h-line-broad {
+        display: none;
+    }
+    .sub-branch-left {
+        margin-left: 0;
+    }
+    .lower-split-container {
+        flex-direction: column;
+    }
+    .h-line-connector {
+        width: 2px;
+        height: 30px;
     }
 }
